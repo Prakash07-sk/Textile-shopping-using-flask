@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="/static/css/app.css">
+<link rel="stylesheet" type="text/css" href="/static/css/userlogin.css">
+
+    <form class="form-signin" method="POST" action="/login">
+  <div class="text-center mb-4">
+    <img class="mb-4" src="/static/img/login.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Signin page</h1>
+    <h4 style="color: red;">{{message}}</h4>
+  </div>
+
+  <div class="form-label-group">
+    <input type="email" id="inputEmail" class="form-control"name="username" placeholder="Email address" required autofocus>
+    <label for="inputEmail">Email address</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+    <label for="inputPassword">Password</label>
+  </div>
+
+  <button class="btn btn-lg  btn-warning btn-block" type="submit">Sign in</button>
+  <a href="/registration" class="link"><p class=" mt-5 mb-3 text-muted text-center">Create your Account</p></a>
+  
+</form>

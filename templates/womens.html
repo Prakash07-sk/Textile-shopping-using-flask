@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css" href="/static/css/app.css">
+<link rel="stylesheet" type="text/css" href="/static/css/productspage.css">
+<body style="background: #ededed" >
+	<nav class="navbar  fixed-top bg-yellow">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Pashion World</h5> 
+ 
+  <nav class="my-2 my-md-0 mr-md-3">
+    <div class="dropdown">
+    <a class="p-2 text-dark " href="/kids">Kids/children</a>
+    <a class="p-2 text-dark" href="/mens">Mens</a>
+    <a class="p-2 text-dark active" href="">Womens</a>   
+  </nav>
+      <a class="link" href="" role="button" >Hello {{uname}}</a>
+    <a class="btn btn-outline-dark" title={{uname}} href="/userlogout">Logout</a>
+</nav>
+<div class="nav-scroller bg-white shadow-sm">
+  <nav class="nav nav-underline">
+    <a class="nav-link disabled" href="">Type of available dresses></a>
+    {% for filter in catagory%}
+    <a class="nav-link disabled" href="#">{{filter}}</a>
+    {% endfor %}
+  </nav>
+</div>
+<!-- ===========================================kids=================================
+ -->
+<div class="position-relative   p-md-5 m-md-3 bg-white" id="catagory">
+
+
+  <div class="row row-cols-1 row-cols-md-6">
+      {%for values in womens %}
+  <div class="col mb-3">
+  <a href="/womens"> <img src="data:;base64,{{values.product_image}}" class="card-img-top" width="200" height="200">
+      <div class="card-body"></a>
+        <h5 class="card-title link">{{values.product_name}}</h5>
+        <p class="card-text link">Rs.{{values.product_price}} /-</p>
+      
+    </div>
+      
+  </div>
+{% endfor %}
+
+
+</div>
+</a></div></div></div>
+{% include 'footer.html' %}
+
+</body>

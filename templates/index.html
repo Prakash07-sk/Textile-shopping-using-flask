@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth;">
+
+<link rel="stylesheet" type="text/css" href="/static/css/app.css">
+
+<body style="background: #ededed" >
+  
+  <nav class="navbar  fixed-top bg-yellow">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Pashion World</h5> 
+ 
+  <nav class="my-2 my-md-0 mr-md-3">
+    <div class="dropdown">
+    <a class="p-2 text-dark" href="#">Home</a>
+    <a class="p-2 text-dark" href="#todaysdeal">Today's Deals</a>
+    <a class="p-2 text-dark" href="#catagory">Catagory</a>
+    
+  </nav>
+    {% if uname %}
+      <a class="link" href="" role="button" >Hello {{uname}}</a>
+    <a class="btn btn-outline-dark" title={{uname}} href="/userlogout">Logout</a>
+    {% else %}
+    <a class="btn btn-outline-primary" href="/login">Signin</a>
+    {% endif %}
+
+</nav>
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-add">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">Pashion World</h1>
+    <p class="lead font-weight-normal">Shop your dress here and make your Style improve </p>
+    <a class="btn btn-outline-secondary" href="#catagory">Shop now</a>
+  </div>
+  </div>
+
+<!-- ============================Todays Deal========================================= -->
+<div class="position-relative overflow-hidden p-2 p-md-5 m-md-3 bg-white" id="todaysdeal">
+
+  <div class="input-group-prepend">
+    <h5>Today's Deal&nbsp;&nbsp;</h5>
+   <a href="/todaysdeal">view all deals</a>
+  </div>
+  <div class="row ">
+     {%for i in range(0,5) %}
+  <div class="col mb-3">
+    
+      <a href="/todaysdeal"> <img src="data:;base64,{{todays[i].product_image}}" class="card-img-top" width="200" height="200"></a>
+      <div class="card-body">
+        <h5 class="card-title">{{todays[i].product_name}}</h5>
+        <p class="card-text">Rs. {{todays[i].product_price}} /-</p>
+      
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+
+<!-- =============================================Mens========================================= -->
+<div class="position-relative   p-md-5 m-md-3 bg-white" id="catagory">
+
+  <div class="input-group-prepend">
+    <h5>Mens&nbsp;&nbsp;</h5>
+   <a href="/mens">view more>>></a>
+  </div>
+
+  <div class="row ">
+     {%for i in range(0,5) %}
+  <div class="col mb-3">
+    
+      <a href="/mens"> <img src="data:;base64,{{mens[i].product_image}}" class="card-img-top" width="200" height="200"></a>
+      <div class="card-body">
+        <h5 class="card-title">{{mens[i].product_name}}</h5>
+        <p class="card-text">Rs. {{mens[i].product_price}} /-</p>
+      
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+<!-- ==============================Women======================================================= -->
+<div class="position-relative   p-md-5 m-md-3 bg-white" id="catagory">
+<div class="input-group-prepend">
+    <h5>Womens&nbsp;&nbsp;</h5>
+   <a href="/womens">view more>>></a>
+  </div>
+
+  <div class="row ">
+     {%for i in range(0,5) %}
+
+  <div class="col mb-3">
+   
+      <a href="/womens"> <img src="data:;base64,{{womens[i].product_image}}" class="card-img-top" width="200" height="200"></a>
+      <div class="card-body">
+        <h5 class="card-title">{{womens[i].product_name}}</h5>
+        <p class="card-text">Rs. {{womens[i].product_price}} /-</p>
+      
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+<!-- ====================================kids============================================ -->
+<div class="position-relative   p-md-5 m-md-3 bg-white" id="catagory">
+<div class="input-group-prepend">
+    <h5>Kids & children&nbsp;&nbsp;
+   <a href="/kids" >view more>>></a>
+  </div>
+
+  <div class="row ">
+      {%for i in range(0,5) %}
+  <div class="col mb-3">
+  <a href="/kids"> <img src="data:;base64,{{kids[i].product_image}}" class="card-img-top" width="200" height="200">
+      <div class="card-body"></a>
+        <h5 class="card-title link">{{kids[i].product_name}}</h5>
+        <p class="card-text link">Rs.{{kids[i].product_price}} /-</p>
+      
+    </div>
+      
+  </div>
+{% endfor %}
+
+
+</div>
+
+
+
+
+
+
+
+
+ <!-- ========================================================About====================================
+ -->
+<!-- Button trigger modal -->
+
+</a></div></div></div>
+{% include 'footer.html' %}
+</body>
+</html>
